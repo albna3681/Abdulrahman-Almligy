@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212; 
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-card {
+      background-color: #1e1e1e;
+      color: #fff; 
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      background-color: #333; 
+      border-radius: 50%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    .user-location {
+      color: #a5d6a7; 
+      margin-bottom: 10px;
+    }
+
+    .bio {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      background-color: #333; 
+      color: #fff; 
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #444;  
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const app = document.getElementById("app");
+
+    // إنشاء البطاقة
+    const profileCard = document.createElement("div");
+    profileCard.className = "profile-card";
+
+    const profileImage = document.createElement("div");
+    profileImage.className = "profile-image";
+    
+    const image = document.createElement("img");
+    image.src = ""; 
+
+    profileImage.appendChild(image);
+
+    const name = document.createElement("h2");
+    name.className = "name";
+    name.textContent = "Jessica Randall";
+
+    const userLocation = document.createElement("p");
+    userLocation.className = "user-location";
+    userLocation.textContent = "London, United Kingdom";
+
+    const bio = document.createElement("p");
+    bio.className = "bio";
+    bio.textContent = '"Front-end developer and avid reader."';
+
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.className = "buttons";
+
+    const buttonLabels = ["GitHub", "Frontend Mentor", "LinkedIn", "Twitter", "Instagram"];
+    
+    buttonLabels.forEach(label => {
+        const button = document.createElement("button");
+        button.className = "btn";
+        button.textContent = label;
+        buttonsContainer.appendChild(button);
+    });
+
+    profileCard.appendChild(profileImage);
+    profileCard.appendChild(name);
+    profileCard.appendChild(userLocation); 
+    profileCard.appendChild(bio);
+    profileCard.appendChild(buttonsContainer);
+
+    app.appendChild(profileCard);
+  </script>
+</body>
+</html>
